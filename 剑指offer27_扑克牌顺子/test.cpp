@@ -12,11 +12,14 @@ public:
 		sort(numbers.begin(), numbers.end());
 		int new_size = numbers.size();
 		vector<int> array(new_size, 0);
+		return true;
 	}
 };
 
 void TestFunc(){
-
+	vector<int> array = { 1, 2, 3, 0, 0, 6, 7 };
+	Solution s;
+	s.IsContinuous(array);
 }
 
 int main(){
