@@ -13,31 +13,30 @@ public:
 		vector<int> array;
 		int i = 0;
 		int num_zero = 0;
-		int index = 0;
+		int index = -1;
+		while (numbers[i] == 0){
+			++num_zero;
+		}
+		i = num_zero;
 		while (i < numbers.size()){
-			if (numbers[i] == 0){
-				++num_zero;
+			if (array.empty()){
+				array.push_back(numbers[i]);
+				index++;
 			}
-			if (numbers[i] != 0){
-				if (array.empty()){
-					array.push_back(numbers[i]);
-					index++;
-				}
-				else if (numbers[i] - 1 == array[index-1]){
-					array.push_back(numbers[i]);
-					index++;
+			else if (numbers[i] - 1 == array[index]){
+				array.push_back(numbers[i]);
+				index++;
+			}
+			else{
+				int cur = numbers[i] - array[index] - 1;
+				if (cur > num_zero){
+					return false;
 				}
 				else{
-					int cur = numbers[i] - array[index];
-					if (cur > num_zero){
-						return false;
-					}
-					else{
-						while (cur){
-							array.push_back(0);
-							index++;
-							cur--;
-						}
+					while (cur){
+						array.push_back(0);
+						index++;
+						cur--;
 					}
 				}
 			}
