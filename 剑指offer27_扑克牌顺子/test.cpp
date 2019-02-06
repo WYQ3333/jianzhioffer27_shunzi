@@ -16,8 +16,8 @@ public:
 		int index = -1;
 		while (numbers[i] == 0){
 			++num_zero;
+			++i;
 		}
-		i = num_zero;
 		while (i < numbers.size()){
 			if (array.empty()){
 				array.push_back(numbers[i]);
@@ -49,7 +49,7 @@ public:
 void TestFunc(){
 	vector<int> array = { 1, 2, 3, 0, 0, 6, 7 };
 	Solution s;
-	s.IsContinuous(array);
+	cout<<s.IsContinuous(array)<<endl;
 }
 
 int main(){
