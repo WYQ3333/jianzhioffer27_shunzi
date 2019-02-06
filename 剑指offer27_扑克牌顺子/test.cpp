@@ -9,6 +9,9 @@ using namespace std;
 class Solution {
 public:
 	bool IsContinuous(vector<int> numbers) {
+		if (numbers.size() < 5){
+			return false;
+		}
 		sort(numbers.begin(), numbers.end());
 		vector<int> array;
 		int i = 0;
@@ -29,8 +32,11 @@ public:
 			}
 			else{
 				int cur = numbers[i] - array[index] - 1;
-				if (cur > num_zero){
+				if (cur > num_zero&&index < 5){
 					return false;
+				}
+				else if (index >= 5){
+					return true;
 				}
 				else{
 					while (cur){
