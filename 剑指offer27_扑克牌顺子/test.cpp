@@ -48,7 +48,7 @@ public:
 };
 
 void TestFunc(){
-	vector<int> array = { 1, 2, 3, 0, 0, 6, 7 };
+	vector<int> array = { 1,3,0,0,5 };
 	Solution s;
 	cout<<s.IsContinuous(array)<<endl;
 }
