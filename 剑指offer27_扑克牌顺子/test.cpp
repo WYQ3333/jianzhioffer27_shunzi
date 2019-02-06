@@ -23,7 +23,7 @@ public:
 				array.push_back(numbers[i]);
 				index++;
 			}
-			else if (numbers[i] - 1 == array[index]){
+			else if ((numbers[i] - 1 == array[index])){
 				array.push_back(numbers[i]);
 				index++;
 			}
@@ -34,7 +34,8 @@ public:
 				}
 				else{
 					while (cur){
-						array.push_back(0);
+						int temp = array[index];
+						array.push_back(++temp);
 						index++;
 						cur--;
 					}
