@@ -86,7 +86,8 @@ public:
 };
 
 void TestFunc(){
-	vector<int> array = { 0,0,2,1,4 };
+	//一共五张牌，0除外，当最大减去最小的数字小于5的时候就可以构成顺子，否则构不成顺子
+	vector<int> array = { 0,0,2,1,8 };
 	Solution s;
 	cout<<s.IsContinuous(array)<<endl;
 }
