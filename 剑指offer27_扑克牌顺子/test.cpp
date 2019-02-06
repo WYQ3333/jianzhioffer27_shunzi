@@ -23,7 +23,7 @@ public:
 					array.push_back(numbers[i]);
 					index++;
 				}
-				else if (numbers[i] - 1 == array[index]){
+				else if (numbers[i] - 1 == array[index-1]){
 					array.push_back(numbers[i]);
 					index++;
 				}
